@@ -5,8 +5,9 @@ import shutil
 import os
 import time
 
-from conversor import estados_siglas
-from Insert import (
+from Componentes.conversor import estados_siglas
+
+from Componentes.Insert import (
     insert_data_to_db_clientes,
     insert_data_to_db_loja,
     insert_data_to_db_produtos,
