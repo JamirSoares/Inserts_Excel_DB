@@ -1,7 +1,7 @@
 import sys
 import os
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
-from db import get_connection
+from Componentes.db import get_connection
 
 
 
@@ -16,9 +16,6 @@ def executar_insert(query, valores, entidade):
         cursor.execute(query, valores)
         conn.commit()
         return 200
-    except Error as e:
-        print(f"[ERRO] Falha ao inserir em {entidade}: {e}")
-        return 400
     finally:
         cursor.close()
         conn.close()
