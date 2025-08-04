@@ -1,4 +1,3 @@
-
 <body>
 
 <h1>Projeto de Processamento e Inserção de Dados em Banco SQL</h1>
@@ -51,9 +50,10 @@
   <li>colorama</li>
   <li>pyodbc (ou driver ODBC para SQL Server)</li>
   <li>openpyxl</li>
+  <li>watchdog (para monitoramento automático de arquivos)</li>
 </ul>
 <p>Instale as dependências via pip:<br />
-<pre>pip install pandas colorama pyodbc openpyxl</pre></p>
+<pre>pip install pandas colorama pyodbc openpyxl watchdog</pre></p>
 
 <h2>Funções Principais</h2>
 
@@ -73,17 +73,29 @@
 <h3>conversor.py</h3>
 <p>Dicionário para conversão dos nomes dos estados brasileiros em suas siglas.</p>
 
-<h2>Observações</h2>
+<h2>Monitoramento automático de arquivos com Watchdog</h2>
+
+<p>O projeto inclui um script que utiliza a biblioteca <strong>watchdog</strong> para monitorar continuamente a pasta <code>processar/</code>. Sempre que um novo arquivo Excel é adicionado, o processamento é iniciado automaticamente, facilitando a ingestão contínua dos dados sem necessidade de intervenção manual.</p>
+
+<h3>Como funciona</h3>
 <ul>
-  <li>Os arquivos Excel devem conter uma aba chamada <code>data</code>.</li>
-  <li>Colunas devem estar com nomes exatos esperados.</li>
-  <li>Datas em <code>vendas.xlsx</code> devem estar no formato <code>MM/DD/YYYY</code>.</li>
-  <li>Certifique-se de que o banco esteja configurado corretamente para receber os dados.</li>
+  <li>O script observa a pasta <code>processar/</code> em busca de novos arquivos.</li>
+  <li>Ao detectar a criação ou modificação de um arquivo, chama a função de processamento principal.</li>
+  <li>Os arquivos são movidos para pastas de processamento, sucesso ou erro conforme o resultado.</li>
+  <li>Permite integração fácil em sistemas que recebem dados periódicos.</li>
 </ul>
+
+<h3>Como usar</h3>
+<ol>
+  <li>Instale a biblioteca watchdog (se ainda não tiver):<br />
+    <pre>pip install watchdog</pre>
+  </li>
+  <li>Execute o script de monitoramento (exemplo <code>watchdog_monitor.py</code>):<br />
+    <pre>python watchdog_monitor.py</pre>
+  </li>
+  <li>Adicione arquivos Excel na pasta <code>processar/</code> para iniciar o processamento automático.</li>
+</ol>
 
 <hr />
 
 <p><em>Desenvolvido por Jamir - System Analytics</em></p>
-
-</body>
-</html>
