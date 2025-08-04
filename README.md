@@ -1,17 +1,4 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>README - Projeto de Processamento e Inserção de Dados</title>
-<style>
-  body { font-family: Arial, sans-serif; line-height: 1.6; padding: 20px; max-width: 900px; margin: auto; background: #f9f9f9; color: #333; }
-  h1, h2, h3 { color: #2c3e50; }
-  pre { background: #eee; padding: 10px; overflow-x: auto; }
-  code { background: #eee; padding: 2px 6px; border-radius: 3px; }
-  blockquote { color: #555; border-left: 4px solid #ccc; margin-left: 0; padding-left: 1em; }
-</style>
-</head>
+
 <body>
 
 <h1>Projeto de Processamento e Inserção de Dados em Banco SQL</h1>
